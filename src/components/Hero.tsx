@@ -3,24 +3,28 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const handleBookNowClick = () => {
+    window.open("https://www.whatsapp.com/catalog/918217078794", "_blank");
+  };
+
   return (
     <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              <span className="text-primary">Professional</span> Steam Ironing Services
+              <span className="text-primary">Press N Glow</span> Steam Ironing Services
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
               We take care of the wrinkles, so you don't have to. Professional, reliable, and convenient ironing services delivered to your door.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-6 rounded-md text-lg">
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-white px-6 py-6 rounded-md text-lg"
+                onClick={handleBookNowClick}
+              >
                 Book Now
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 px-6 py-6 rounded-md text-lg">
-                View Services
               </Button>
             </div>
             
@@ -49,9 +53,6 @@ const Hero = () => {
                 alt="Professional ironing service" 
                 className="w-full h-auto rounded"
               />
-            </div>
-            <div className="hidden md:block absolute -bottom-6 -left-6 bg-primary text-white p-4 rounded-lg shadow-lg">
-              <p className="font-semibold">Same-day service available!</p>
             </div>
           </div>
         </div>

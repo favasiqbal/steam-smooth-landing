@@ -4,12 +4,10 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Process from "../components/Process";
-import Pricing from "../components/Pricing";
 import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
-import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   // Scroll to section if URL has hash on initial load
@@ -29,7 +27,6 @@ const Index = () => {
       <Hero />
       <Services />
       <Process />
-      <Pricing />
       <Testimonials />
       <CTA />
       <Contact />

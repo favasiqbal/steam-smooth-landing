@@ -20,21 +20,24 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleBookNowClick = () => {
+    window.open("https://www.whatsapp.com/catalog/918217078794", "_blank");
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <a href="#" className="text-2xl font-bold text-primary">
-            PerfectPress
+            Press N Glow
           </a>
           
           <div className="hidden md:flex space-x-8 items-center">
             <a href="#services" className="text-sm font-medium hover:text-primary">Services</a>
             <a href="#process" className="text-sm font-medium hover:text-primary">How It Works</a>
-            <a href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</a>
             <a href="#testimonials" className="text-sm font-medium hover:text-primary">Testimonials</a>
             <a href="#contact" className="text-sm font-medium hover:text-primary">Contact</a>
-            <Button className="bg-primary text-white hover:bg-primary/90">
+            <Button className="bg-primary text-white hover:bg-primary/90" onClick={handleBookNowClick}>
               Book Now
             </Button>
           </div>
@@ -52,10 +55,12 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4">
               <a href="#services" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Services</a>
               <a href="#process" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>How It Works</a>
-              <a href="#pricing" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
               <a href="#testimonials" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Testimonials</a>
               <a href="#contact" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Contact</a>
-              <Button className="bg-primary text-white hover:bg-primary/90 w-full" onClick={() => setMobileMenuOpen(false)}>
+              <Button className="bg-primary text-white hover:bg-primary/90 w-full" onClick={() => {
+                setMobileMenuOpen(false);
+                handleBookNowClick();
+              }}>
                 Book Now
               </Button>
             </div>
