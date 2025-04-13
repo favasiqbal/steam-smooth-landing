@@ -5,25 +5,25 @@ import { Card, CardContent } from "@/components/ui/card";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      position: "Working Professional",
-      image: "https://randomuser.me/api/portraits/women/45.jpg",
+      name: "Sabith",
+      position: "Customer",
+      image: "https://lh3.googleusercontent.com/a/ACg8ocL8VXB7lEP18DKZ5NAglGWqlIjXYlH_skvbX2hAvlI=s120-c-rp-mo-br100", 
       stars: 5,
-      text: "PerfectPress has been a lifesaver for me. With my busy work schedule, I never have time to iron my clothes properly. Their service is fast, affordable, and my clothes always look immaculate."
+      text: "I was skeptical about outsourcing my ironing but Press N Glow made me a believer with their exceptional service. My clothes came back perfectly pressed and the convenience is unmatched. Highly recommend!"
     },
     {
-      name: "Michael Chen",
-      position: "Small Business Owner",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      name: "Sachin Pk",
+      position: "Customer",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjXpVbo2VEix0TDvgET57-jQqRl4blUwhdGWmF-_ScwO9A=s120-c-rp-mo-br100",
       stars: 5,
-      text: "I've been using PerfectPress for my entire family's clothes for over a year now. The quality is consistently excellent, and their staff is always friendly and accommodating."
+      text: "The best ironing service I've ever used! Press N Glow delivers consistently perfect results every time. Their attention to detail is impressive and their staff is very professional."
     },
     {
-      name: "Emily Rodriguez",
-      position: "Executive Assistant",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
-      stars: 4,
-      text: "As someone who cares a lot about presentation, I'm very particular about how my clothes look. PerfectPress meets my high standards every time. Highly recommended!"
+      name: "Moideen Kutty",
+      position: "Customer",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjVrqZOOsXLQkkM7voJf5JmvB3F-X9qaS9JhtfDuUAB3Kw=s120-c-rp-mo-br100",
+      stars: 5,
+      text: "Excellent service! Fast, efficient, and my clothes have never looked better. The team at Press N Glow takes great care with even the most delicate fabrics. I'm a customer for life."
     }
   ];
 
@@ -33,7 +33,7 @@ const Testimonials = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied customers have to say about our service.
+            Don't just take our word for it. Here's what our satisfied customers have to say about Press N Glow.
           </p>
         </div>
 
