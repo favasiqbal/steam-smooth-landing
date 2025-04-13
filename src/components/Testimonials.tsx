@@ -5,25 +5,28 @@ import { Card, CardContent } from "@/components/ui/card";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sabith",
+      name: "Shifa Sherfudeen",
       position: "Customer",
-      image: "https://lh3.googleusercontent.com/a/ACg8ocL8VXB7lEP18DKZ5NAglGWqlIjXYlH_skvbX2hAvlI=s120-c-rp-mo-br100", 
       stars: 5,
-      text: "I was skeptical about outsourcing my ironing but Press N Glow made me a believer with their exceptional service. My clothes came back perfectly pressed and the convenience is unmatched. Highly recommend!"
+      text: "Excellent service and impeccable job highlights the high quality of the ironing work… thanks to PRESS AND GLOW"
     },
     {
-      name: "Sachin Pk",
+      name: "Nooha Saleem",
       position: "Customer",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjXpVbo2VEix0TDvgET57-jQqRl4blUwhdGWmF-_ScwO9A=s120-c-rp-mo-br100",
       stars: 5,
-      text: "The best ironing service I've ever used! Press N Glow delivers consistently perfect results every time. Their attention to detail is impressive and their staff is very professional."
+      text: "On time delivery. Best ironing service."
     },
     {
-      name: "Moideen Kutty",
+      name: "Nazmin",
       position: "Customer",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjVrqZOOsXLQkkM7voJf5JmvB3F-X9qaS9JhtfDuUAB3Kw=s120-c-rp-mo-br100",
       stars: 5,
-      text: "Excellent service! Fast, efficient, and my clothes have never looked better. The team at Press N Glow takes great care with even the most delicate fabrics. I'm a customer for life."
+      text: "Excellent"
+    },
+    {
+      name: "Manikandan TK",
+      position: "Customer",
+      stars: 5,
+      text: "Good service"
     }
   ];
 
@@ -37,20 +40,13 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name} 
-                    className="h-14 w-14 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                    <p className="text-gray-500 text-sm">{testimonial.position}</p>
-                  </div>
+                <div className="mb-4">
+                  <h4 className="font-semibold text-lg">{testimonial.name}</h4>
+                  <p className="text-gray-500 text-sm">{testimonial.position}</p>
                 </div>
                 
                 <div className="flex mb-3">
