@@ -4,46 +4,36 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
 const Pricing = () => {
-  const plans = [
-    {
-      name: "Basic",
-      price: 29.99,
-      description: "Perfect for individuals with occasional needs",
-      features: [
-        "Up to 15 items per month",
-        "Standard 48-hour turnaround",
-        "Free pickup and delivery",
-        "Basic garment care"
-      ],
-      popular: false
+  const services = [
+    { 
+      name: "Shirt", 
+      originalPrice: 20.00, 
+      discountedPrice: 15.00 
     },
-    {
-      name: "Standard",
-      price: 49.99,
-      description: "Ideal for small families or regular needs",
-      features: [
-        "Up to 30 items per month",
-        "36-hour turnaround",
-        "Free pickup and delivery",
-        "Stain treatment",
-        "Fabric softener included"
-      ],
-      popular: true
+    { 
+      name: "Pant", 
+      originalPrice: 20.00, 
+      discountedPrice: 15.00 
     },
-    {
-      name: "Premium",
-      price: 79.99,
-      description: "Best value for large families",
-      features: [
-        "Up to 50 items per month",
-        "24-hour express service",
-        "Free pickup and delivery",
-        "Premium fabric care",
-        "Stain treatment",
-        "Special garment processing",
-        "Dedicated account manager"
-      ],
-      popular: false
+    { 
+      name: "Churidhar Top", 
+      originalPrice: 20.00, 
+      discountedPrice: 15.00 
+    },
+    { 
+      name: "Mundu", 
+      originalPrice: 20.00, 
+      discountedPrice: 15.00 
+    },
+    { 
+      name: "Churidhar Bottom", 
+      originalPrice: 20.00, 
+      discountedPrice: 15.00 
+    },
+    { 
+      name: "Saree", 
+      originalPrice: 50.00, 
+      discountedPrice: 40.00 
     }
   ];
 
@@ -51,57 +41,42 @@ const Pricing = () => {
     <section id="pricing" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple Pricing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Pricing</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Choose a plan that works for you. All plans include free pickup and delivery within our service area.
+            Transparent and affordable pricing for all your ironing needs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {services.map((service, index) => (
             <Card 
               key={index} 
-              className={`border ${plan.popular ? 'relative border-primary shadow-lg' : 'border-gray-200'} transition-all hover:shadow-xl`}
+              className="border border-gray-200 hover:shadow-lg transition-all"
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-0 right-0 mx-auto w-fit bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
-                </div>
-              )}
-              <CardHeader className="text-center pt-8">
-                <h3 className="font-bold text-2xl mb-2">{plan.name}</h3>
-                <p className="text-gray-600 mb-3">{plan.description}</p>
+              <CardHeader className="text-center pt-6">
+                <h3 className="font-bold text-xl mb-2">{service.name}</h3>
                 <div className="flex items-center justify-center">
-                  <span className="text-3xl font-bold">${plan.price}</span>
-                  <span className="text-gray-500 ml-1">/month</span>
+                  <span className="text-gray-400 line-through mr-2">
+                    ₹{service.originalPrice.toFixed(2)}
+                  </span>
+                  <span className="text-2xl font-bold text-primary">
+                    ₹{service.discountedPrice.toFixed(2)}
+                  </span>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center">
-                      <Check className="h-5 w-5 text-primary mr-2" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              <CardContent className="text-center">
+                <p className="text-gray-600">Per piece ironing charge</p>
               </CardContent>
               <CardFooter>
                 <Button 
-                  className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary/90' : 'bg-gray-800 hover:bg-gray-700'} text-white`}
+                  className="w-full bg-primary hover:bg-primary/90 text-white"
+                  onClick={() => window.open('https://www.whatsapp.com/catalog/918217078794', '_blank')}
                 >
-                  Get Started
+                  Book Now
                 </Button>
               </CardFooter>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">Need a custom plan for your business?</p>
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
-            Contact for Business Pricing
-          </Button>
         </div>
       </div>
     </section>
