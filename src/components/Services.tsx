@@ -1,4 +1,3 @@
-
 import { Clock, Shirt, Package, Sparkles, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -6,8 +5,8 @@ const Services = () => {
   const servicesList = [
     {
       icon: <Shirt className="h-10 w-10 text-primary" />,
-      title: "Regular Ironing",
-      description: "Standard ironing service for everyday clothing items like shirts, trousers, and casual wear."
+      title: "Steam Ironing",
+      description: "Professional steam ironing service for everyday clothing items like shirts, trousers, and casual wear."
     },
     {
       icon: <Package className="h-10 w-10 text-primary" />,
