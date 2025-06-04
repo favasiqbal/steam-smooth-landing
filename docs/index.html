@@ -1,31 +1,737 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Press N Glow - Professional Steam Ironing Services</title>
-    <meta name="description" content="Professional steam ironing services to keep your clothes looking pristine. Fast, reliable, and affordable." />
-    <meta name="author" content="Press N Glow" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press N Glow Steam Ironing Services </title>
+  <style>
+    /* Base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border-color: hsl(214.3, 31.8%, 91.4%);
+    }
 
-    <meta property="og:title" content="Press N Glow - Professional Steam Ironing Services" />
-    <meta property="og:description" content="Professional steam ironing services to keep your clothes looking pristine. Fast, reliable, and affordable." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    :root {
+      --background: hsl(210, 40%, 98%);
+      --foreground: hsl(210, 100%, 25%);
+      --card: hsl(0, 0%, 100%);
+      --card-foreground: hsl(210, 100%, 25%);
+      --popover: hsl(0, 0%, 100%);
+      --popover-foreground: hsl(210, 100%, 25%);
+      --primary: hsl(210, 100%, 35%);
+      --primary-foreground: hsl(210, 40%, 98%);
+      --secondary: hsl(210, 40%, 96.1%);
+      --secondary-foreground: hsl(210, 80%, 20%);
+      --muted: hsl(210, 40%, 96.1%);
+      --muted-foreground: hsl(210, 30%, 46.9%);
+      --accent: hsl(210, 40%, 96.1%);
+      --accent-foreground: hsl(210, 80%, 20%);
+      --destructive: hsl(0, 84.2%, 60.2%);
+      --destructive-foreground: hsl(210, 40%, 98%);
+      --border: hsl(210, 31.8%, 85%);
+      --input: hsl(210, 31.8%, 85%);
+      --ring: hsl(210, 80%, 30%);
+      --radius: 0.5rem;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
-    <script src="/assets/index-C8ohXszy.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DbGtiABa.css">
-  </head>
+    .dark {
+      --background: hsl(222.2, 84%, 4.9%);
+      --foreground: hsl(210, 40%, 98%);
+      --card: hsl(222.2, 84%, 4.9%);
+      --card-foreground: hsl(210, 40%, 98%);
+      --popover: hsl(222.2, 84%, 4.9%);
+      --popover-foreground: hsl(210, 40%, 98%);
+      --primary: hsl(210, 100%, 50%);
+      --primary-foreground: hsl(222.2, 47.4%, 11.2%);
+      --secondary: hsl(217.2, 32.6%, 17.5%);
+      --secondary-foreground: hsl(210, 40%, 98%);
+      --muted: hsl(217.2, 32.6%, 17.5%);
+      --muted-foreground: hsl(215, 20.2%, 65.1%);
+      --accent: hsl(217.2, 32.6%, 17.5%);
+      --accent-foreground: hsl(210, 40%, 98%);
+      --destructive: hsl(0, 62.8%, 30.6%);
+      --destructive-foreground: hsl(210, 40%, 98%);
+      --border: hsl(217.2, 32.6%, 17.5%);
+      --input: hsl(217.2, 32.6%, 17.5%);
+      --ring: hsl(212.7, 26.8%, 83.9%);
+    }
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
 
-  </body>
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: var(--font-sans);
+      font-feature-settings: "rlig" 1, "calt" 1;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .rounded {
+      border-radius: var(--radius);
+    }
+
+    .shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .my-8 {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .bg-primary {
+      background-color: var(--primary);
+    }
+
+    .text-primary {
+      color: var(--primary);
+    }
+
+    .text-primary-foreground {
+      color: var(--primary-foreground);
+    }
+
+    .bg-muted {
+      background-color: var(--muted);
+    }
+
+    .bg-card {
+      background-color: var(--card);
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .text-muted-foreground {
+      color: var(--muted-foreground);
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .border {
+      border: 1px solid var(--border);
+    }
+
+    .hover-opacity:hover {
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: var(--secondary-foreground);
+    }
+
+    .card {
+      background-color: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Header */
+    header {
+      padding: 1rem 0;
+      background-color: var(--background);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 6rem 0;
+      background-color: var(--background);
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: var(--muted-foreground);
+    }
+
+    /* Features */
+    .features {
+      padding: 5rem 0;
+      background-color: var(--background);
+    }
+
+    .feature-card {
+      height: 100%;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: var(--muted);
+      padding: 5rem 0;
+    }
+
+    .testimonial-card {
+      position: relative;
+      padding-top: 2rem;
+    }
+
+    .quote {
+      font-size: 4rem;
+      position: absolute;
+      top: -1rem;
+      left: 1rem;
+      color: var(--primary);
+      opacity: 0.2;
+    }
+
+    /* Pricing */
+    .pricing {
+      padding: 5rem 0;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .price-period {
+      font-size: 1rem;
+      color: var(--muted-foreground);
+    }
+
+    /* CTA */
+    .cta {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--muted);
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-links h4 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--muted-foreground);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--foreground);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: var(--foreground);
+      font-size: 1.5rem;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .hide-mobile {
+        display: none;
+      }
+
+      .grid-cols-2, .grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-flex-col {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .mobile-center {
+        text-align: center;
+        align-items: center;
+      }
+
+      .mobile-mt-4 {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#features">Why Us?</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+	  <li><a href="#How to">How to</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container flex items-center mobile-flex-col">
+      <div class="hero-content mobile-center">
+        <h1>Press N Glow Steam Ironing Services</h1>
+        <p>We take the stress out of your dress. Fast, reliable, and affordable ironing services to keep you looking your best.</p>
+        <a href="https://wa.me/c/918217078794" class="btn btn-primary" target="_blank">Book Now</a>
+      </div>
+      <div class="animate-float hide-mobile flex justify-center items-center">
+        <img src="E:\Press N Glow\coupons\Logo_Final-removebg-preview.png" alt="Ironing Service" width="600" height="300">
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8">Why you should choose us ?</h2>
+      <div class="grid grid-cols-3 gap-8">
+        <div class="card feature-card">
+          <div class="feature-icon">🧺</div>
+          <h3 class="text-xl font-bold mb-2">Professional Steam Ironing Services</h3>
+          <p>Expert steam ironing for all your clothing needs with professional equipment and techniques.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon">📱</div>
+          <h3 class="text-xl font-bold mb-2">Order Online on WhatsApp</h3>
+          <p>No more phone calls or seperate apps required.Easy and convenient ordering process through WhatsApp. Place your orders with just a few taps.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon">🚚</div>
+          <h3 class="text-xl font-bold mb-2">Hassle Free Doorstep Pick Up and Delivery</h3>
+          <p>We collect and deliver your clothes right to your doorstep at your preferred time.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon">📲</div>
+          <h3 class="text-xl font-bold mb-2">Real Time Order Updates Through WhatsApp</h3>
+          <p>Stay informed about your order status with real-time updates sent directly to your WhatsApp.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon">👁️</div>
+          <h3 class="text-xl font-bold mb-2">Live Order Follow Up</h3>
+          <p>Track your order progress with live updates and follow-up throughout the service process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8">What Our Customers Say</h2>
+      <div class="text-center mb-8">
+        <p class="mb-4">See what our customers are saying about us on Google:</p>
+        <a href="https://www.google.com/search?q=Press+N+Glow+steam+Ironing+Services&stick=H4sIAAAAAAAA_-NgU1IxqLBITTRIskg2TUtKNbU0SLMyqEg2sUgyNTUySbNINktONTZdxKocUJRaXKzgp-Cek1-uUFySmpir4FmUn5eZl64QnFpUlpmcWgwAF4_6gU4AAAA&hl=en&mat=CdYyLd6lZIo0ElcBYJahacWo1ZfzGWIL6k-qP1lPxsxouSXSVv-io1OCNPDaRLMBaWeXjR3lHb30jSgKkBXMP13Mv05RbBevjpVyfCD7GqzDdJuFTtpSud5CooWTvLmAlF4&authuser=0" target="_blank" class="btn btn-primary">View Our Google Reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Pricing</h2>
+      <div class="grid grid-cols-3 gap-8">
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Shirt</h3>
+          <div class="price mb-4">₹15.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹20.00</span></div>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Pant</h3>
+          <div class="price mb-4">₹15.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹20.00</span></div>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Dhothi</h3>
+          <div class="price mb-4">₹25.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹30.00</span></div>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">T-Shirt</h3>
+          <div class="price mb-4">₹15.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹20.00</span></div>
+          </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Saree</h3>
+          <div class="price mb-4">₹40.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹45.00</span></div>
+          
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Ladies Full Kurtha / Dress</h3>
+          <div class="price mb-4">₹20.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹25.00</span></div>
+          
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Ladies Churidhar Top / Western Top</h3>
+          <div class="price mb-4">₹15.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹20.00</span></div>
+         
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Ladies Churidhar Pant / Western Bottom</h3>
+          <div class="price mb-4">₹15.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹20.00</span></div>
+          
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Shawl</h3>
+          <div class="price mb-4">₹10.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹15.00</span></div>
+         
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold mb-4">Kids Wear</h3>
+          <div class="price mb-4">₹10.00<span class="price-period" style="text-decoration: line-through; margin-left: 10px;">₹15.00</span></div>
+          
+        </div>
+     
+  </section>
+
+  <section id="contact" class="py-16">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+      <div class="max-w-2xl mx-auto text-center">
+      
+        
+        <div class="card">
+          <div class="mb-6">
+            <p class="text-lg mb-2"><strong>Phone:</strong> +91-8217078794</p>
+            <p class="text-lg mb-4"><strong>Email:</strong> pressnglowservices@gmail.com</p>
+          </div>
+          
+          <div>
+            <h4 class="text-xl font-bold mb-4">Business Hours</h4>
+            <p class="mb-2">Monday - Friday: 7am - 7pm</p>
+            <p class="mb-2">Saturday: 7am - 11am</p>
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section id="How To" class="py-16">
+  <div class="container">
+    <h2 class="text-3xl font-bold text-center mb-8">How to</h2>
+    <div class="max-w-2xl mx-auto text-center">
+
+      <div class="card mb-8">
+        <div class="mb-6">
+          <p class="text-lg mb-2"><strong>Book an Appointment:</strong> Send a 'Hi' to 8217078794 on WhatsApp or click the shop icon on top right of the WhatsApp chat.</p>
+          <p class="text-lg mb-4"><strong>Check Order Status:</strong> Send 'Hi' on WhatsApp and select 'Order Status' from the options.</p>
+        </div>
+      </div>
+
+  <footer>
+
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#features">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+       
+      </div>
+      
+      <div class="border-t pt-4 text-center">
+        <p>&copy; 2025 Steam Smooth. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple mobile menu toggle
+    document.getElementById('mobile-menu-toggle')?.addEventListener('click', function() {
+      const nav = document.querySelector('nav');
+      if (nav) {
+        nav.classList.toggle('hide-mobile');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Form submission
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
+        form.reset();
+      });
+    }
+
+    // Additional functionality: Add CSS classes for input focus
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.style.borderColor = 'var(--primary)';
+        this.style.outline = 'none';
+        this.style.boxShadow = '0 0 0 2px rgba(0, 105, 255, 0.2)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.style.borderColor = 'var(--border)';
+        this.style.boxShadow = 'none';
+      });
+    });
+  </script>
+</body>
 </html>
